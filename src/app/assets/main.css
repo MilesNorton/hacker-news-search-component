@@ -1,13 +1,4 @@
-.search-client-outer-container {
-  width: 100vw !important;
-  height: 100vh !important;
-}
-
-.search-client-outer-grid {
-  height: 100% !important;
-}
-
-.search-client-inner-grid {
+.search-result-container {
   max-height: 80vh !important;
   max-width: 550px !important;
   text-align: left !important;

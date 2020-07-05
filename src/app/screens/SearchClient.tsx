@@ -44,34 +44,30 @@ function SearchClientView(props: IProps): JSX.Element {
   } = useStateChange(props);
 
   return (
-    <div className="search-client-outer-container">
-      <Grid textAlign="center" className="search-client-outer-grid">
-        <Grid.Column className="search-client-inner-grid">
-          <Divider />
-          <Input
-            fluid
-            onChange={handleSearchChange}
-            icon={<Icon name="search" inverted circular link />}
-            placeholder="Search..."
-          />
-          <Divider />
-          <Segment.Group id="results-container">
-            {queriedResults(searchTerm, SearchResult, {
-              results: props.results,
-            })}
-          </Segment.Group>
-          <Divider />
-          <Container textAlign="center">
-            <Pagination
-              currentPage={currentPage}
-              totalPages={totalPages}
-              handlePageChange={handlePageChange}
-            />
-          </Container>
-          <Divider />
-        </Grid.Column>
-      </Grid>
-    </div>
+    <Grid.Column className="search-result-container">
+      <Divider />
+      <Input
+        fluid
+        onChange={handleSearchChange}
+        icon={<Icon name="search" inverted circular link />}
+        placeholder="Search..."
+      />
+      <Divider />
+      <Segment.Group id="results-container">
+        {queriedResults(searchTerm, SearchResult, {
+          results: props.results,
+        })}
+      </Segment.Group>
+      <Divider />
+      <Container textAlign="center">
+        <Pagination
+          currentPage={currentPage}
+          totalPages={totalPages}
+          handlePageChange={handlePageChange}
+        />
+      </Container>
+      <Divider />
+    </Grid.Column>
   );
 }
 function useStateChange(props: IProps) {
