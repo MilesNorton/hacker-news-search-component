@@ -15,7 +15,7 @@ import { RootState, buildQuery } from "@utils";
 import { triggerDataFetch } from "@actions";
 import { Pagination, FailedResult, SearchResult } from "@components";
 const MAX_PER_PAGE = 5; // can add a variable for changing the per page view value
-const QUERY_URL = "http://hn.algolia.com/api/v1/search?";
+const QUERY_URL = "https://hn.algolia.com/api/v1/search?";
 
 const mapStateToProps = ({ SearchResult }: RootState) => {
   console.log(SearchResult);
