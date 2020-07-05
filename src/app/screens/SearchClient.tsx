@@ -1,7 +1,6 @@
 import * as React from "react";
 import {
   Segment,
-  Grid,
   Icon,
   Input,
   Divider,
@@ -44,7 +43,7 @@ function SearchClientView(props: IProps): JSX.Element {
   } = useStateChange(props);
 
   return (
-    <Grid.Column className="search-result-container">
+    <>
       <Divider />
       <Input
         fluid
@@ -67,7 +66,7 @@ function SearchClientView(props: IProps): JSX.Element {
         />
       </Container>
       <Divider />
-    </Grid.Column>
+    </>
   );
 }
 function useStateChange(props: IProps) {
