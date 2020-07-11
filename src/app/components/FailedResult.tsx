@@ -1,13 +1,9 @@
 import * as React from "react";
-import { Container } from "semantic-ui-react";
+import { Container } from "@components";
 
 interface IProps {
   errorString: string;
 }
 export const FailedResult: React.FunctionComponent<IProps> = ({
   errorString,
-}) => (
-  <Container textAlign="center" className="result-container-no-results">
-    {errorString}
-  </Container>
-);
+}) => <Container>{errorString}</Container>;

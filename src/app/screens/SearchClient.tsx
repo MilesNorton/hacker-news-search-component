@@ -1,18 +1,18 @@
 import * as React from "react";
-import {
-  Segment,
-  Icon,
-  Input,
-  Divider,
-  Container,
-  PaginationProps,
-} from "semantic-ui-react";
+
 import { connect } from "react-redux";
 import { useState, useEffect } from "react";
 
 import { RootState, buildQuery } from "@utils";
 import { triggerDataFetch } from "@actions";
-import { Pagination, FailedResult, SearchResult } from "@components";
+import {
+  Pagination,
+  FailedResult,
+  SearchResult,
+  Divider,
+  Container,
+  Segments,
+} from "@components";
 const MAX_PER_PAGE = 5; // can add a variable for changing the per page view value
 const QUERY_URL = "https://hn.algolia.com/api/v1/search?";
 
@@ -45,20 +45,20 @@ function SearchClientView(props: IProps): JSX.Element {
   return (
     <>
       <Divider />
-      <Input
-        fluid
+      <input
+        // fluid
         onChange={handleSearchChange}
-        icon={<Icon name="search" inverted circular link />}
+        // icon={<Icon name="search" inverted circular link />}
         placeholder="Search..."
       />
       <Divider />
-      <Segment.Group id="results-container">
+      <Segments>
         {queriedResults(searchTerm, SearchResult, {
           results: props.results,
         })}
-      </Segment.Group>
+      </Segments>
       <Divider />
-      <Container textAlign="center">
+      <Container>
         <Pagination
           currentPage={currentPage}
           totalPages={totalPages}
@@ -74,11 +74,8 @@ function useStateChange(props: IProps) {
   const [totalPages, setTotalPages] = useState(1);
   const [currentPage, setCurrentPage] = useState(1);
 
-  const handlePageChange = (
-    e: React.MouseEvent<HTMLAnchorElement>,
-    data: PaginationProps
-  ): void => {
-    setCurrentPage(Number(data.activePage)); //reset current page on each search
+  const handlePageChange = (newPage: number): void => {
+    setCurrentPage(newPage); //reset current page on each search
 
     props.triggerDataFetch({
       url: buildQuery(
@@ -86,7 +83,7 @@ function useStateChange(props: IProps) {
         [
           ["query", searchTerm],
           ["hitsPerPage", MAX_PER_PAGE.toString()],
-          ["page", (currentPage - 1).toString()],
+          ["page", (newPage - 1).toString()],
         ],
         "=",
         "&"

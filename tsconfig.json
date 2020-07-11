@@ -13,6 +13,7 @@
     "noUnusedLocals": true,
     "baseUrl": ".",
     "rootDir": ".",
+    "types": ["react"],
     "paths": {
       "@utils": ["./src/app/utils"],
       "@reducers": ["./src/app/store/reducers"],
@@ -20,7 +21,8 @@
       "@actions": ["./src/app/store/actions"],
       "@components": ["./src/app/components"],
       "@screens": ["./src/app/screens"],
-      "@redux": ["./src/app/store/redux"]
+      "@redux": ["./src/app/store/redux"],
+      "@styles": ["./src/app/styles"]
     }
   },
   "include": ["src/**/*"],
