@@ -11,6 +11,10 @@ Styled components was selected over using css files as importing css files to th
 [https://single-spa.js.org/](https://single-spa.js.org/) was used as the micro-frontend framework.
 This projects single-spa root config (I refer to it is the manager) can be found here: [https://github.com/MilesNorton/hacker-news-manager](https://github.com/MilesNorton/hacker-news-manager)
 
+## See the Demo
+
+https://cocky-ride-310246.netlify.app/
+
 ## Try It
 
 If you want try this repo, just clone it and follow the commands:
