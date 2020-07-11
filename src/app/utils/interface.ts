@@ -32,10 +32,10 @@ export interface ISearchResult {
   points: number;
   story_id: null;
   story_text: null;
-  story_title: null;
-  story_url: null;
-  title: string;
-  url: string;
+  story_title?: string;
+  story_url?: string;
+  title?: string;
+  url?: string;
 }
 
 export interface IState {
